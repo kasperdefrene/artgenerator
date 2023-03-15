@@ -25,6 +25,14 @@
 }
 
 .canvas{
-  width: 70%;
-  height: 70%;
+  display: grid;
+
+  width: 500px;
+  height: 500px;
+}
+
+.maker{
+  grid-column: 1;
+  color: black;
+  margin-inline-start: 2rem;
 }

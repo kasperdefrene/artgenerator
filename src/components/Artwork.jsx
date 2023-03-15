@@ -14,7 +14,7 @@ const Artwork = ({radius, colorOne, colorTwo, rotation, offsetOne, offsetTwo, se
 
             <use x="0" y="0" href="#myCircle" fill="url('#myGradient')" />
 
-            <rect x="0" y={seaLevel} width="500" height="250" opacity="0.9" fill="lightblue" stroke="none" />
+            <rect x="0" y={seaLevel} width="500" height="500" opacity="0.9" fill="lightblue" stroke="none" />
 
             <svg x={boatLocation} y={boatY} width="200" height="auto" viewBox="0 0 480 139" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M135.41 23.5162C120.885 36.4171 109.036 47.2136 109.227 47.3114C109.8 47.8841 155.863 54.2856 173.448 56.2922C182.908 57.3444 198.388 58.5875 207.848 59.0622C229.348 60.2074 271.398 61.4506 271.398 60.9709C271.398 60.7801 266.906 47.0178 261.556 30.4855L251.714 0.381746L206.894 0.190874L161.981 8.36892e-06L135.41 23.5162ZM239.861 21.4118C240.815 22.557 240.815 24.4706 239.959 30.2016C238.334 41.6685 240.82 40.998 202.019 40.998C173.638 40.998 169.048 40.8072 168.573 39.5641C167.903 37.8462 176.027 25.6109 179.947 22.2682L182.717 19.9729H210.716C234.414 19.9827 238.813 20.1736 239.861 21.4118Z" fill={colorBoat}/>

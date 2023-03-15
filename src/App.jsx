@@ -2,6 +2,7 @@ import './App.css'
 import Artwork from './components/Artwork';
 import Slider from './components/Slider';
 import ColorPicker from './components/ColorPicker';
+import Creator from './components/Creator';
 import { useState } from 'react';
 
 function App() {
@@ -63,6 +64,11 @@ function App() {
 
   const boatY = seaLevel -250;
 
+  const [inputText, setInputText] = useState("you");
+  const handleNameChange = (e) => {
+    setInputText(e);
+  }
+
   const backgroundStyle = {
     backgroundColor: background
   }
@@ -70,8 +76,11 @@ function App() {
     return (
         <div className="App">
           <div className='controls'>
-            <h1>Gradient Generator</h1>
-            <h2>change the sliders and start generating</h2>
+            <h1>Sunset generator</h1>
+            <h2>change the parameters and start generating</h2>
+
+            <h2>Your name</h2>
+            <Creator onValueChange={handleNameChange}/>
   
             <h2>Gradient circle</h2>
             <Slider label="Size" min="0" max="250" onValueChange={handleSetRadius} />
@@ -101,6 +110,7 @@ function App() {
 
           <div className='canvas' style={backgroundStyle}>
               <Artwork radius={radius} colorOne={colorOne} colorTwo={colorTwo} rotation={rotationResult} offsetOne={offsetOnePercentage} offsetTwo={offsteTwoPercentage} seaLevel={seaLevel} colorBoat={colorBoat} boatLocation={boatLocation} boatY={boatY}/>
+              <h3 className='maker'>Created by {inputText}</h3>
           </div>        
         </div>
 
