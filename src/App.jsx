@@ -46,6 +46,22 @@ function App() {
 
   const rotationResult = 'rotate(' + rotation + ')';
 
+  const [seaLevel, setSeaLevel] = useState(250);
+  const handleSetSeaLevel = (e) => {
+    setSeaLevel(e);
+  }
+
+  const [colorBoat, setColorBoat] = useState('#4B5320');
+  const handleSetColorBoat = (e) => {
+    setColorBoat(e);
+  }
+
+  const [boatLocation, setBoatLocation] = useState(250);
+  const handleSetBoatLocation = (e) => {
+    setBoatLocation(e);
+  }
+
+  const boatY = seaLevel -250;
 
   const backgroundStyle = {
     backgroundColor: background
@@ -53,27 +69,38 @@ function App() {
 
     return (
         <div className="App">
-          <h1>Gradient Generator</h1>
-          <h2>change the sliders and start generating</h2>
-
-          <h2>Gradient circle</h2>
-          <Slider label="Size" min="0" max="250" onValueChange={handleSetRadius} />
-          <div className='Gradient'>
-            <p>Color One</p>
-            <ColorPicker label="colorOne" onValueChange={handleSetColorOne}/>
-            <p>Color Two</p>
-            <ColorPicker label="colorTwo" onValueChange={handleSetColorTwo}/>
+          <div className='controls'>
+            <h1>Gradient Generator</h1>
+            <h2>change the sliders and start generating</h2>
+  
+            <h2>Gradient circle</h2>
+            <Slider label="Size" min="0" max="250" onValueChange={handleSetRadius} />
+            <div className='Gradient'>
+              <p>Color One</p>
+              <ColorPicker label="colorOne" onValueChange={handleSetColorOne}/>
+              <p>Color Two</p>
+              <ColorPicker label="colorTwo" onValueChange={handleSetColorTwo}/>
+            </div>
+            <div className='sliders'>
+              <Slider label="offsetOne" min="0" max="100" onValueChange={handleSetOffsetOne}/>
+              <Slider label="offsetTwo" min="0" max="100" onValueChange={handleSetOffsetTwo}/>
+              <Slider label="Rotation" min="0" max="360" onValueChange={handleSetRotation}/>
+            </div>
+  
+            <h2>Background</h2>
+            <ColorPicker onValueChange={handleSetBackground}/>
+  
+            <h2>Sea</h2>
+            <Slider label="Sealevel" min="250" max="500" onValueChange={handleSetSeaLevel} />
+  
+            <h2>Boat</h2>
+            <ColorPicker label="BoatColor" onValueChange={handleSetColorBoat}/>
+            <Slider label="BoatLocation" min="-150" max="400" onValueChange={handleSetBoatLocation}/>
           </div>
-          <Slider label="offsetOne" min="0" max="100" onValueChange={handleSetOffsetOne}/>
-          <Slider label="offsetTwo" min="0" max="100" onValueChange={handleSetOffsetTwo}/>
-          <Slider label="Rotation" min="0" max="360" onValueChange={handleSetRotation}/>
-
-          <h2>Background</h2>
-          <ColorPicker onValueChange={handleSetBackground}/>
 
 
           <div className='canvas' style={backgroundStyle}>
-              <Artwork radius={radius} colorOne={colorOne} colorTwo={colorTwo} rotation={rotationResult} offsetOne={offsetOnePercentage} offsetTwo={offsteTwoPercentage}/>
+              <Artwork radius={radius} colorOne={colorOne} colorTwo={colorTwo} rotation={rotationResult} offsetOne={offsetOnePercentage} offsetTwo={offsteTwoPercentage} seaLevel={seaLevel} colorBoat={colorBoat} boatLocation={boatLocation} boatY={boatY}/>
           </div>        
         </div>
 

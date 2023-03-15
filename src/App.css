@@ -1,14 +1,19 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.controls{
+  margin-inline-start: 2rem;
   text-align: center;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.sliders{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.App{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
 }
 
 
@@ -17,4 +22,9 @@
   gap: 2rem;
   justify-content: center;
   align-items: center;
+}
+
+.canvas{
+  width: 70%;
+  height: 70%;
 }
