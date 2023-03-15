@@ -14,6 +14,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+  margin-block-end: 4rem;
 }
 
 
@@ -26,9 +27,9 @@
 
 .canvas{
   display: grid;
-
   width: 500px;
   height: 500px;
+  margin: 0 auto;
 }
 
 .maker{
@@ -36,3 +37,10 @@
   color: black;
   margin-inline-start: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+  .App{
+    grid-template-columns: 1fr;
+  }
+}
+  
