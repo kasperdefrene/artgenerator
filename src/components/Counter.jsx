@@ -1,7 +1,8 @@
-const Counter = ({ count, increment, decrement }) => (
+const Counter = ({ amount }) => (
     <input 
         type="number"
-        
+        value={amount}
+        onChange={(e) => increment(parseInt(e.target.value, 10))}
     />
     
 

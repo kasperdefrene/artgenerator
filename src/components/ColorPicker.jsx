@@ -3,7 +3,7 @@ const ColorPicker = ({onValueChange}) => {
         <div>
             <input 
             type="color"
-            onChange={(e) => onValueChange({backgroundColor: e.target.value})}
+            onChange={(e) => onValueChange(e.target.value)}
             />
 
         </div>
