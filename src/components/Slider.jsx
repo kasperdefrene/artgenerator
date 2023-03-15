@@ -1,4 +1,4 @@
-const Slider = ({ onValueChange, value, max, min, label }) => {
+const Slider = ({ onValueChange, value, max, min, label}) => {
     return (
       <label>
         <span>{label}</span>
